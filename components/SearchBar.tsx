@@ -3,14 +3,14 @@
 import { SearchManufacturer } from '@/components'
 
 import React, { useState } from 'react'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type='submit' className={`ml-3 z-10 ${otherClasses}`}>
     <Image
-      src='/magnifying-glass.svg'
-      alt='magnifying glass'
+      src={'/magnifying-glass.svg'}
+      alt={'magnifying glass'}
       width={40}
       height={40}
       className='object-contain'
@@ -26,7 +26,7 @@ const SearchBar = () => {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if(manufacturer === '' && model === '') {
+    if(manufacturer.trim() === '' && model.trim() === '') {
       return alert('Please fill in the search field')
     }
 
